@@ -1,17 +1,13 @@
 #include <iostream>
 #include "Duck.h"
 
-using namespace std;
-
 void main()
 {
-	shared_ptr<FlyBehavior> pfWings = make_shared<FlyWithWings>();
-	shared_ptr<FlyBehavior> pfNo = make_shared<FlyNoWay>();
-	shared_ptr<FlyBehavior> pfRocket = make_shared<FlyWithRocket>();
+	std::shared_ptr<FlyBehavior> pfWings = std::make_shared<FlyWithWings>();
+	std::shared_ptr<FlyBehavior> pfNo = std::make_shared<FlyNoWay>();
+	std::shared_ptr<FlyBehavior> pfRocket = std::make_shared<FlyWithRocket>();
 
-//	FlyBehavior* pfB3 = new FlyWithRocket;
-
-	shared_ptr<Duck> pDuck = make_shared<MallardDuck>(pfWings);
+	std::shared_ptr<Duck> pDuck = std::make_shared<MallardDuck>(pfWings);
 	pDuck->performFly();
 
 	pDuck->setFlyBehavior(pfNo);

@@ -3,7 +3,7 @@
 
 class FlyBehavior {
 public:
-	virtual void fly() = 0;
+	virtual void fly() = 0;		// pure virtual function
 };
 
 class FlyWithWings : public FlyBehavior {

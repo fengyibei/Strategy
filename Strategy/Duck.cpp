@@ -1,5 +1,5 @@
-#include "Duck.h"
 #include <iostream>
+#include "Duck.h"
 
 // base class
 Duck::Duck(std::shared_ptr<FlyBehavior> pflyBehavior) : _pfB(pflyBehavior) {}
