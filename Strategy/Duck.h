@@ -6,26 +6,26 @@
 
 class Duck {
 public:
-	Duck(std::shared_ptr<FlyBehavior> pflyBehavior);
+	Duck(const std::shared_ptr<FlyBehavior> &);
 	void performFly();
-	void setFlyBehavior(std::shared_ptr<FlyBehavior> pflyBehavior);
+	void setFlyBehavior(const std::shared_ptr<FlyBehavior> &);
 private:
 	std::shared_ptr<FlyBehavior> _pfB;
 };
 
 class MallardDuck : public Duck {
 public:
-	MallardDuck(std::shared_ptr<FlyBehavior> pflyBehavior);
+	MallardDuck(const std::shared_ptr<FlyBehavior> &);
 };
 
 class RedheadDuck : public Duck {
 public:
-	RedheadDuck(std::shared_ptr<FlyBehavior> pflyBehavior);
+	RedheadDuck(const std::shared_ptr<FlyBehavior> &);
 };
 
 class RubberDuck : public Duck {
 public:
-	RubberDuck(std::shared_ptr<FlyBehavior> pflyBehavior);
+	RubberDuck(const std::shared_ptr<FlyBehavior> &);
 };
 
 #endif
