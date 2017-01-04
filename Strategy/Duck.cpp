@@ -2,9 +2,11 @@
 #include "Duck.h"
 
 // base class
-Duck::Duck(std::shared_ptr<FlyBehavior> pflyBehavior) : _pfB(pflyBehavior) {}
+Duck::Duck(const std::shared_ptr<FlyBehavior> &pflyBehavior) 
+	: _pfB(pflyBehavior) 
+{}
 
-void Duck::setFlyBehavior(std::shared_ptr<FlyBehavior> pflyBehavior)
+void Duck::setFlyBehavior(const std::shared_ptr<FlyBehavior> &pflyBehavior)
 {
 	_pfB = pflyBehavior;
 }
@@ -15,8 +17,14 @@ void Duck::performFly()
 }
 
 // derived classes
-MallardDuck::MallardDuck(std::shared_ptr<FlyBehavior> pflyBehavior) : Duck(pflyBehavior) {}
+MallardDuck::MallardDuck(const std::shared_ptr<FlyBehavior> &pflyBehavior) 
+	: Duck(pflyBehavior) 
+{}
 
-RedheadDuck::RedheadDuck(std::shared_ptr<FlyBehavior> pflyBehavior) : Duck(pflyBehavior) {}
+RedheadDuck::RedheadDuck(const std::shared_ptr<FlyBehavior> &pflyBehavior) 
+	: Duck(pflyBehavior) 
+{}
 
-RubberDuck::RubberDuck(std::shared_ptr<FlyBehavior> pflyBehavior) : Duck(pflyBehavior) {}
+RubberDuck::RubberDuck(const std::shared_ptr<FlyBehavior> &pflyBehavior) 
+	: Duck(pflyBehavior)
+{}
