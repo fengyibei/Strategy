@@ -3,17 +3,16 @@
 
 void main()
 {
-	std::shared_ptr<FlyBehavior> pfWings = std::make_shared<FlyWithWings>();
-	std::shared_ptr<FlyBehavior> pfNo = std::make_shared<FlyNoWay>();
-	std::shared_ptr<FlyBehavior> pfRocket = std::make_shared<FlyWithRocket>();
+    FlyBehavior *pfWings = new FlyWithWings;
+    FlyBehavior *pfNo = new FlyNoWay;
+    FlyBehavior *pfRocket = new FlyWithRocket;
 
-	std::shared_ptr<Duck> pDuck = std::make_shared<MallardDuck>(pfWings);
-	pDuck->performFly();
+    Duck *pDuck = new MallardDuck(pfWings);
+    pDuck->performFly();
 
-	pDuck->setFlyBehavior(pfNo);
-	pDuck->performFly();
+    pDuck->setFlyBehavior(pfNo);
+    pDuck->performFly();
 
-	pDuck->setFlyBehavior(pfRocket);
-	pDuck->performFly();
-
+    pDuck->setFlyBehavior(pfRocket);
+    pDuck->performFly();
 }
