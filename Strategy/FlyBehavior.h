@@ -8,17 +8,17 @@ public:
 
 class FlyWithWings : public FlyBehavior {
 public:
-	virtual void fly();
+    virtual void fly() override;
 };
 
 class FlyNoWay : public FlyBehavior {
 public:
-	virtual void fly();
+    virtual void fly() override;
 };
 
 class FlyWithRocket : public FlyBehavior {
 public:
-	virtual void fly();
+    virtual void fly() override;
 };
 
 #endif
