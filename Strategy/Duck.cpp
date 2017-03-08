@@ -2,32 +2,34 @@
 #include "Duck.h"
 
 // base class
-Duck::Duck(FlyBehavior *pfB)
-    : _pfB(pfB)
+Duck::Duck(FlyBehavior *fb)
+    : fb_(fb)
 {}
 
-void Duck::setFlyBehavior(FlyBehavior *pfB)
+void Duck::setFlyBehavior(FlyBehavior *fb)
 {
-    _pfB = std::unique_ptr<FlyBehavior>(pfB);
+    // need explicit conversion
+    fb_ = std::unique_ptr<FlyBehavior>(fb);
 }
 
 void Duck::performFly()
 {
-    _pfB->fly();
+    fb_->fly();
 }
 
 // derived classes
-MallardDuck::MallardDuck(FlyBehavior *pfB)
-    : Duck(pfB)
+MallardDuck::MallardDuck(FlyBehavior *fb)
+    : Duck(fb)
 {
 }
 
-RedheadDuck::RedheadDuck( FlyBehavior *pfB)
-    : Duck(pfB)
+RedheadDuck::RedheadDuck( FlyBehavior *fb)
+    : Duck(fb)
 {
 }
 
-RubberDuck::RubberDuck( FlyBehavior *pfB)
-    : Duck(pfB)
+RubberDuck::RubberDuck(FlyBehavior *fb)
+    : Duck(fb)
 {
 }
+
