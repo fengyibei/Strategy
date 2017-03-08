@@ -6,27 +6,28 @@
 
 class Duck {
 public:
-    Duck(FlyBehavior *pfB);
-    void performFly();
-    void setFlyBehavior(FlyBehavior *pfB);
+    Duck(FlyBehavior *fb);
+	void performFly();
+    void setFlyBehavior(FlyBehavior *fb);
 
 private:
-    std::unique_ptr<FlyBehavior> _pfB;
+    std::unique_ptr<FlyBehavior> fb_;
 };
 
 class MallardDuck : public Duck {
 public:
-    MallardDuck(FlyBehavior *pfB);
+    MallardDuck(FlyBehavior *fb);
 };
 
 class RedheadDuck : public Duck {
 public:
-    RedheadDuck(FlyBehavior *pfB);
+    RedheadDuck(FlyBehavior *fb);
 };
 
 class RubberDuck : public Duck {
 public:
-    RubberDuck(FlyBehavior *pfB);
+    RubberDuck(FlyBehavior *fb);
 };
 
 #endif
+
